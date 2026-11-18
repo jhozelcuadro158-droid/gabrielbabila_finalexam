@@ -1,0 +1,196 @@
+
+Gabriel
+# ============================================
+#          MY PYTHON LEARNING SYSTEM
+# ============================================
+
+student_name = ""
+
+
+def welcome():
+    global student_name
+
+    print("====================================")
+    print("       MY PYTHON LEARNING SYSTEM")
+    print("====================================")
+
+    student_name = input("Enter your name: ")
+
+    print("\nHello,", student_name)
+    print("Welcome to our Python tutorial!")
+
+
+def introduction():
+    print("\n1. INTRODUCTION TO PROGRAMMING")
+    print("--------------------------------")
+    print("Programming means giving instructions")
+    print("to a computer to do a specific task.")
+    print("Python is used to create programs.")
+
+
+def basic_syntax():
+    print("\n2. PYTHON BASIC SYNTAX")
+    print("--------------------------------")
+    print("Syntax means the rules of writing code.")
+    print('Example: print("Hello World")')
+    print("This displays a message on the screen.")
+
+
+def arithmetic():
+    print("\n3. ARITHMETIC OPERATORS")
+    print("--------------------------------")
+
+    a = 20
+    b = 10
+
+    print("Addition:", a + b)
+    print("Subtraction:", a - b)
+    print("Multiplication:", a * b)
+    print("Division:", a / b)
+
+
+def input_output():
+    print("\n4. BASIC INPUT AND OUTPUT")
+    print("--------------------------------")
+
+    name = input("Enter your name: ")
+    print("Hello", name)
+    print("Welcome to Python!")
+
+
+def conditional():
+    print("\n5. CONDITIONAL STATEMENTS")
+    print("--------------------------------")
+
+    number = int(input("Enter a number: "))
+
+    if number > 0:
+        print("The number is positive.")
+    elif number < 0:
+        print("The number is negative.")
+    else:
+        print("The number is zero.")
+
+
+def logical():
+    print("\n6. LOGICAL OPERATORS")
+    print("--------------------------------")
+
+    age = 20
+
+    print("AND:", age >= 18 and age <= 30)
+    print("OR:", age < 18 or age == 20)
+    print("NOT:", not age < 18)
+
+
+def iteration():
+    print("\n7. ITERATION AND LOOP")
+    print("--------------------------------")
+    print("Counting from 1 to 5:")
+
+    number = 1
+
+    while number <= 5:
+        print(number)
+        number += 1
+
+
+def quiz():
+    score = 0
+
+    questions = [
+        ["Who created Python?",
+         "A. Bill Gates", "B. Guido van Rossum",
+         "C. Steve Jobs", "B"],
+
+        ["What command displays text?",
+         "A. print()", "B. input()",
+         "C. if", "A"],
+
+        ["What symbol is used for addition?",
+         "A. -", "B. *", "C. +", "C"],
+
+        ["What statement is used for decisions?",
+         "A. if", "B. print", "C. input", "A"],
+
+        ["What loop repeats instructions?",
+         "A. if", "B. while", "C. print", "B"]
+    ]
+
+    question_number = 0
+
+    print("\n========== PYTHON QUIZ ==========")
+
+    while question_number < 5:
+
+        q = questions[question_number]
+
+        print("\n" + q[0])
+        print(q[1])
+        print(q[2])
+        print(q[3])
+
+        answer = input("Your answer: ").upper()
+
+        if answer == q[4]:
+            print("Correct!")
+            score += 1
+        else:
+            print("Wrong! Answer:", q[4])
+
+        question_number += 1
+
+    print("\n========== QUIZ RESULT ==========")
+    print("Student:", student_name)
+    print("Your score:", score, "/ 5")
+
+    if score == 5:
+        print("Excellent work!")
+    elif score >= 3:
+        print("Good job! Keep practicing!")
+    else:
+        print("Keep studying!")
+
+
+def main():
+    welcome()
+
+    while True:
+        print("\n========== MAIN MENU ==========")
+        print("1. Introduction to Programming")
+        print("2. Python Basic Syntax")
+        print("3. Arithmetic Operators")
+        print("4. Basic Input and Output")
+        print("5. Conditional Statements")
+        print("6. Logical Operators")
+        print("7. Iteration and Loop")
+        print("8. Take Python Quiz")
+        print("9. Exit")
+
+        choice = input("\nChoose a lesson: ")
+
+        if choice == "1":
+            introduction()
+        elif choice == "2":
+            basic_syntax()
+        elif choice == "3":
+            arithmetic()
+        elif choice == "4":
+            input_output()
+        elif choice == "5":
+            conditional()
+        elif choice == "6":
+            logical()
+        elif choice == "7":
+            iteration()
+        elif choice == "8":
+            quiz()
+        elif choice == "9":
+            print("\nThank you for using our program!")
+            print("Goodbye,", student_name)
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+
+main()
